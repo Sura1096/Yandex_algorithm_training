@@ -1,3 +1,6 @@
+from random import randint
+
+
 '''
 В школе решили на один прямоугольный стол поставить два прямоугольных ноутбука. Н
 оутбуки нужно поставить так, чтобы их стороны были параллельны сторонам стола.
@@ -12,3 +15,17 @@
 '''
 
 
+a, b, c, d = map(int, input().split())
+
+dct = {}
+dct[max(a, c) * (b + d)] = str(max(a, c)) + ' ' + str(b + d)
+dct[max(a, d) * (b + c)] = str(max(a, d)) + ' ' + str(b + c)
+dct[max(b, d) * (a + c)] = str(max(b, d)) + ' ' + str(a + c)
+dct[max(b, c) * (a + d)] = str(max(b, c)) + ' ' + str(a + d)
+
+mini = max(a, c) * (b + d)
+for key in dct.keys():
+    if key < mini:
+        mini = key
+
+print(dct[mini])
