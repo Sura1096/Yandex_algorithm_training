@@ -15,3 +15,15 @@
 Формат вывода
 Выведите одно число — количество деталей, которое может получиться по такой технологии.
 '''
+
+
+N, K, M = map(int, input().split())
+d_count = 0
+
+if M <= K <= N:
+    while N >= K:
+        z_count = N // K
+        d_count += z_count * (K // M)
+        N -= z_count * (K // M) * M
+
+print(d_count)
