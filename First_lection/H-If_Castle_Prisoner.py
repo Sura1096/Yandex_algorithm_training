@@ -10,3 +10,19 @@
 Формат вывода
 Программа должна вывести слово YES или NO.
 '''
+
+
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input())
+E = int(input())
+
+if (A <= D and C <= E) or (C <= D and A <= E):
+    print('YES')
+elif (B <= D and A <= E) or (A <= D and B <= E):
+    print('YES')
+elif (C <= D and B <= E) or (B <= D and C <= E):
+    print('YES')
+else:
+    print('NO')
