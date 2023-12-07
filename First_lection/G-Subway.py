@@ -44,3 +44,22 @@
 Вывод:
 -1
 '''
+
+
+a = int(input())
+b = int(input())
+n = int(input())
+m = int(input())
+
+min1 = a * (n - 1) + n
+min2 = b * (m - 1) + m
+mini = max(min2, min1)
+
+max1 = min1 + (a * 2)
+max2 = min2 + (b * 2)
+maxi = min(max1, max2)
+
+if mini <= maxi:
+    print(f'{mini} {maxi}')
+else:
+    print(-1)
