@@ -23,3 +23,7 @@ NO
 Вывод
 NO
 '''
+
+
+def increase_by_one(lst):
+    pass
