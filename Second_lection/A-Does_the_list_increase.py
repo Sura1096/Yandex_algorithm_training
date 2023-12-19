@@ -25,5 +25,14 @@ NO
 '''
 
 
-def increase_by_one(lst):
-    pass
+def list_increase(lst):
+    result = 'YES'
+    for ind in range(1, len(lst)):
+        if lst[ind-1] >= lst[ind]:
+            result = 'NO'
+            break
+    return result
+
+
+lst = list(map(int, input().split()))
+print(list_increase(lst))
