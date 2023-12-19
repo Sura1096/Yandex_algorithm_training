@@ -30,7 +30,23 @@ CONSTANT
 
 
 def weakly_seq(nums):
-    pass
+    seq_type = None
+
+    for ind in range(1, len(nums)):
+        if nums[ind - 1] < nums[ind]:
+            if seq_type is None:
+                seq_type = 'WEAKLY ASCENDING'
+            elif seq_type == 'WEAKLY DESCENDING':
+                seq_type = 'RANDOM'
+                break
+        elif nums[ind - 1] > nums[ind]:
+            if seq_type is None:
+                seq_type = 'WEAKLY DESCENDING'
+            elif seq_type == 'WEAKLY ASCENDING':
+                seq_type = 'RANDOM'
+                break
+
+    return seq_type
 
 
 def not_weakly_seq(nums):
