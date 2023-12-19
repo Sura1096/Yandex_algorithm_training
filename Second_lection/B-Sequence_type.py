@@ -70,7 +70,24 @@ def not_weakly_seq(nums):
 
 
 def sequence_type():
-    pass
+    num = int(input())
+    nums = []
+    weakly = False
+
+    while num != -2000000000:
+        if num not in nums:
+            nums.append(num)
+        else:
+            nums.append(num)
+            weakly = True
+        num = int(input())
+
+    if len(set(nums)) == 1:
+        return 'CONSTANT'
+    elif weakly:
+        return weakly_seq(nums)
+    elif weakly is False:
+        return not_weakly_seq(nums)
 
 
 print(sequence_type())
