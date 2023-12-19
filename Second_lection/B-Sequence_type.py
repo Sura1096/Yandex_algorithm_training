@@ -50,7 +50,23 @@ def weakly_seq(nums):
 
 
 def not_weakly_seq(nums):
-    pass
+    seq_type = None
+
+    for ind in range(1, len(nums)):
+        if nums[ind - 1] < nums[ind]:
+            if seq_type is None:
+                seq_type = 'ASCENDING'
+            elif seq_type == 'DESCENDING':
+                seq_type = 'RANDOM'
+                break
+        elif nums[ind - 1] > nums[ind]:
+            if seq_type is None:
+                seq_type = 'DESCENDING'
+            elif seq_type == 'ASCENDING':
+                seq_type = 'RANDOM'
+                break
+
+    return seq_type
 
 
 def sequence_type():
