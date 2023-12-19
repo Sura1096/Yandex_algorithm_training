@@ -25,3 +25,22 @@
 Вывод
 3
 '''
+
+
+def nearest_number():
+    list_len = int(input())
+    lst = list(map(int, input().split()))
+    x = int(input())
+
+    near_num = 0
+    diff = abs(x - lst[0])
+
+    for i in range(1, len(lst)):
+        if abs(x - lst[i]) <= diff:
+            near_num = i
+            diff = abs(x - lst[i])
+
+    return lst[near_num]
+
+
+print(nearest_number())
