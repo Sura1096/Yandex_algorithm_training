@@ -29,52 +29,16 @@ CONSTANT
 '''
 
 
+def weakly_seq(nums):
+    pass
+
+
+def not_weakly_seq(nums):
+    pass
+
+
 def sequence_type():
-    num = int(input())
-    nums = []
-    weakly = False
-    seq_type = None
-
-    while num != -2000000000:
-        if num not in nums:
-            nums.append(num)
-        else:
-            nums.append(num)
-            weakly = True
-        num = int(input())
-
-    if len(set(nums)) == 1:
-        return 'CONSTANT'
-    elif weakly:
-        for ind in range(1, len(nums)):
-            if nums[ind-1] < nums[ind]:
-                if seq_type is None:
-                    seq_type = 'WEAKLY ASCENDING'
-                elif seq_type == 'WEAKLY DESCENDING':
-                    seq_type = 'RANDOM'
-                    break
-            elif nums[ind-1] > nums[ind]:
-                if seq_type is None:
-                    seq_type = 'WEAKLY DESCENDING'
-                elif seq_type == 'WEAKLY ASCENDING':
-                    seq_type = 'RANDOM'
-                    break
-    elif weakly is False:
-        for ind in range(1, len(nums)):
-            if nums[ind-1] < nums[ind]:
-                if seq_type is None:
-                    seq_type = 'ASCENDING'
-                elif seq_type == 'DESCENDING':
-                    seq_type = 'RANDOM'
-                    break
-            elif nums[ind-1] > nums[ind]:
-                if seq_type is None:
-                    seq_type = 'DESCENDING'
-                elif seq_type == 'ASCENDING':
-                    seq_type = 'RANDOM'
-                    break
-
-    return seq_type
+    pass
 
 
 print(sequence_type())
