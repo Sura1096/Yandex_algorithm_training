@@ -45,7 +45,22 @@
 
 
 def do_symmetric():
-    pass
+    N = int(input())
+    seq = list(map(int, input().split()))
+
+    if (seq[:N // 2] == (seq[N // 2:])[::-1]) or (seq[:N // 2 + 1] == (seq[N // 2:])[::-1]):
+        print(0)
+    else:
+        if seq[-1] == seq[-2]:
+            add = (seq[:N-2])[::-1]
+            add_seq = ' '.join([str(char) for char in add])
+            print(len(add))
+            print(add_seq)
+        else:
+            add = (seq[:N-1])[::-1]
+            add_seq = ' '.join([str(char) for char in add])
+            print(len(add))
+            print(add_seq)
 
 
-print(do_symmetric())
+do_symmetric()
