@@ -42,3 +42,10 @@
 4
 4 3 2 1
 '''
+
+
+def do_symmetric():
+    pass
+
+
+print(do_symmetric())
