@@ -32,7 +32,14 @@
 
 
 def greater_than_nbr():
-    pass
+    s = list(map(int, input().split()))
+    counter = 0
+
+    for i in range(1, len(s) - 1):
+        if s[i] > s[i - 1] and s[i] > s[i + 1]:
+            counter += 1
+
+    return counter
 
 
 print(greater_than_nbr())
