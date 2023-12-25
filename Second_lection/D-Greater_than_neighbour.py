@@ -29,3 +29,10 @@
 Вывод
 2
 '''
+
+
+def greater_than_nbr():
+    pass
+
+
+print(greater_than_nbr())
