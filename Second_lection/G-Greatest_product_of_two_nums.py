@@ -23,7 +23,7 @@
 
 def greatest_product_of_two():
     nums = list(map(int, input().split()))
-    
+
     maxi1 = float('-inf')
     maxi2 = float('-inf')
     mini1 = float('inf')
