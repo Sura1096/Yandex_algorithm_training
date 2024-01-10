@@ -7,3 +7,18 @@
 Формат вывода
 Выведите ответ на задачу.
 '''
+
+
+def amount(nums):
+    hash = {}
+
+    for num in nums:
+        if num not in hash:
+            hash[num] = 1
+
+    return len(hash)
+
+
+n = input()
+n = list(map(int, n.split()))
+print(amount(n))
