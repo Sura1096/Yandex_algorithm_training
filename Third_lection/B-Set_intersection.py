@@ -9,3 +9,17 @@
 Формат вывода
 Выведите ответ на задачу.
 '''
+
+
+def intersection(nums1, nums2):
+    inter = list(set(nums1) & set(nums2))
+    inter.sort()
+    return inter
+
+
+n1 = input()
+n1 = list(map(int, n1.split()))
+
+n2 = input()
+n2 = list(map(int, n2.split()))
+print(*intersection(n1, n2))
