@@ -17,27 +17,30 @@
 '''
 
 
-def cubes(anya, borya):
+def intersection(anya, borya):
     inter = list(anya & borya)
     inter.sort()
-
-    rest_anya = list(anya - borya)
-    rest_anya.sort()
-
-    rest_borya = list(borya - anya)
-    rest_borya.sort()
-
     print(len(inter))
     print(*inter)
 
-    print(len(rest_anya))
-    print(*rest_anya)
 
-    print(len(rest_borya))
-    print(*rest_borya)
+def rest_a(anya, borya):
+    rest = list(anya - borya)
+    rest.sort()
+    print(len(rest))
+    print(*rest)
+
+
+def rest_b(anya, borya):
+    rest = list(borya - anya)
+    rest.sort()
+    print(len(rest))
+    print(*rest)
 
 
 n, m = list(map(int, input().split()))
 a = [int(input()) for _ in range(n)]
 b = [int(input()) for _ in range(m)]
-cubes(set(a), set(b))
+intersection(set(a), set(b))
+rest_a(set(a), set(b))
+rest_b(set(a), set(b))
