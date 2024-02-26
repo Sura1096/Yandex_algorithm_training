@@ -15,3 +15,29 @@
 отсортированные по возрастанию номера остальных цветов у Ани, потом количество и о
 тсортированные по возрастанию номера остальных цветов у Бори.
 '''
+
+
+def cubes(anya, borya):
+    inter = list(anya & borya)
+    inter.sort()
+
+    rest_anya = list(anya - borya)
+    rest_anya.sort()
+
+    rest_borya = list(borya - anya)
+    rest_borya.sort()
+
+    print(len(inter))
+    print(*inter)
+
+    print(len(rest_anya))
+    print(*rest_anya)
+
+    print(len(rest_borya))
+    print(*rest_borya)
+
+
+n, m = list(map(int, input().split()))
+a = [int(input()) for _ in range(n)]
+b = [int(input()) for _ in range(m)]
+cubes(set(a), set(b))
