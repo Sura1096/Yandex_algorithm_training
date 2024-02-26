@@ -17,3 +17,6 @@ words = [word for word in sys.stdin.read().split()]
 words = set(words)
 
 print(len(words))
+
+# another solution - 1 line of code
+# print(len(set([word for word in sys.stdin.read().split()])))
