@@ -16,7 +16,12 @@
 
 
 def buttons_amount(buttons, num):
-    pass
+    nums = []
+    for el in num:
+        nums.append(int(el))
+
+    diff = set(nums) - set(buttons)
+    return len(diff)
 
 
 butts = list(map(int, input().split()))
