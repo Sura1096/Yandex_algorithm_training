@@ -9,3 +9,11 @@
 Формат вывода
 Выведите ответ на задачу.
 '''
+
+
+import sys
+
+words = [word for word in sys.stdin.read().split()]
+words = set(words)
+
+print(len(words))
