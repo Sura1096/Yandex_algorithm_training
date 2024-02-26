@@ -17,3 +17,8 @@
 
 def buttons_amount(buttons, num):
     pass
+
+
+butts = list(map(int, input().split()))
+number = input()
+print(buttons_amount(butts, number))
