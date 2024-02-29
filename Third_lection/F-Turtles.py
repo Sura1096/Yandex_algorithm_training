@@ -17,3 +17,25 @@ Hints:
 1. Утверждения должны быть положительные или равны 0
 2. Две черепахи не могут стоять на одном месте
 '''
+
+
+def turtles(turt_amount):
+    statements = []
+
+    for i in range(turt_amount):
+        a, b = map(int, input().split())
+        if a >= 0 and b >= 0:
+            statements.append((a, b))
+
+    statements = set(statements)
+    count = 0
+
+    for a, b in statements:
+        if a + b + 1 == turt_amount:
+            count += 1
+
+    return count
+
+
+turts = int(input())
+print(turtles(turts))
