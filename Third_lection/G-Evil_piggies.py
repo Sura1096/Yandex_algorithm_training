@@ -17,3 +17,21 @@
 Единственная строка выходного файла должна содержать одно целое число — минимальное количество выстрелов,
 необходимое для того, чтобы сбить всех птиц.
 '''
+
+
+def shot_amount(birds_amount):
+    coordinates = []
+
+    for i in range(birds_amount):
+        x, y = map(int, input().split())
+        coordinates.append((x, y))
+
+    dct = {}
+    for x, y in coordinates:
+        dct[x] = dct.get(x, 0) + 1
+
+    return len(dct)
+
+
+birds = int(input())
+print(shot_amount(birds))
