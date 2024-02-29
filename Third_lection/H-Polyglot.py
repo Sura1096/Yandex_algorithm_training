@@ -12,3 +12,19 @@
 Начиная со второй строки - список таких языков. Затем - количество языков, которые знает хотя бы один школьник,
 на следующих строках - список таких языков.
 '''
+
+
+def languages(n):
+    langs = [{input() for _ in range(int(input()))} for _ in range(n)]
+
+    common = set.intersection(*langs)
+    by_one = set.union(*langs)
+
+    print(len(common))
+    print(*common, sep='\n')
+    print(len(by_one))
+    print(*by_one, sep='\n')
+
+
+n = int(input())
+languages(n)
