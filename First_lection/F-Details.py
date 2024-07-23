@@ -17,13 +17,17 @@
 '''
 
 
+def get_details(N, K, M):
+    if not M <= K <= N:
+        return 0
+
+    details_amount = 0
+    while N >= K > 0:
+        blank = N // K
+        details_amount += blank * (K // M)
+        N = (N % K) + (blank * (K % M))
+    return details_amount
+
+
 N, K, M = map(int, input().split())
-d_count = 0
-
-if M <= K <= N:
-    while N >= K:
-        z_count = N // K
-        d_count += z_count * (K // M)
-        N -= z_count * (K // M) * M
-
-print(d_count)
+print(get_details(N, K, M))
