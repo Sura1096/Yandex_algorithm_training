@@ -46,20 +46,23 @@
 '''
 
 
+def min_max_time(a, b, n, m):
+    first_min = a * (n - 1) + n
+    second_min = b * (m - 1) + m
+    min_of_two = max(first_min, second_min)
+
+    first_max = first_min + (a * 2)
+    second_max = second_min + (b * 2)
+    max_of_two = min(first_max, second_max)
+
+    if min_of_two <= max_of_two:
+        return f'{min_of_two} {max_of_two}'
+    else:
+        return -1
+
+
 a = int(input())
 b = int(input())
 n = int(input())
 m = int(input())
-
-min1 = a * (n - 1) + n
-min2 = b * (m - 1) + m
-mini = max(min2, min1)
-
-max1 = min1 + (a * 2)
-max2 = min2 + (b * 2)
-maxi = min(max1, max2)
-
-if mini <= maxi:
-    print(f'{mini} {maxi}')
-else:
-    print(-1)
+print(min_max_time(a, b, n, m))
