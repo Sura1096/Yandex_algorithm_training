@@ -12,17 +12,23 @@
 '''
 
 
+def is_fit(A, B, C, D, E):
+    mini_side = min(D, E)
+    maxi_side = max(D, E)
+
+    if mini_side >= min(A, B) and maxi_side >= max(A, B):
+        return 'YES'
+    elif mini_side >= min(A, C) and maxi_side >= max(A, C):
+        return 'YES'
+    elif mini_side >= min(C, B) and maxi_side >= max(C, B):
+        return 'YES'
+    else:
+        return 'NO'
+
+
 A = int(input())
 B = int(input())
 C = int(input())
 D = int(input())
 E = int(input())
-
-if (A <= D and C <= E) or (C <= D and A <= E):
-    print('YES')
-elif (B <= D and A <= E) or (A <= D and B <= E):
-    print('YES')
-elif (C <= D and B <= E) or (B <= D and C <= E):
-    print('YES')
-else:
-    print('NO')
+print(is_fit(A, B, C, D, E))
