@@ -49,3 +49,41 @@
 Вывод
 0
 '''
+
+
+def get_winner_pos(participants_amount: int, distances: list[int]) -> int:
+    winner_pos = 0
+    winner_metres = distances[0]
+    for ind in range(1, participants_amount):
+        if distances[ind] > winner_metres:
+            winner_metres = distances[ind]
+            winner_pos = ind
+    return winner_pos
+
+
+def get_vasyas_pos(participants_amount: int, winner_pos: int) -> tuple[int, int]:
+    vasyas_pos = -1
+    vasyas_distance = -1
+    for ind in range(winner_pos + 1, participants_amount - 1):
+        if distances[ind] % 10 == 5 and distances[ind + 1] < distances[ind] and vasyas_distance < distances[ind]:
+            vasyas_pos = ind
+            vasyas_distance = distances[ind]
+    return vasyas_pos, vasyas_distance
+
+
+def vasyas_place(participants_amount: int, distances: list[int]) -> int:
+    winner_pos = get_winner_pos(participants_amount, distances)
+    vasyas_pos, vasyas_distance = get_vasyas_pos(participants_amount, winner_pos)
+    if vasyas_pos == -1:
+        return 0
+
+    place = 1
+    for participant in distances:
+        if participant > vasyas_distance:
+            place += 1
+    return place
+
+
+participants_amount = int(input())
+distances = list(map(int, input().split()))
+print(vasyas_place(participants_amount, distances))
